@@ -1,6 +1,6 @@
 package utilities;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
@@ -15,6 +15,9 @@ class ArraySetTest
 		list = new ArraySet<String>();
 	}
 	
+	
+	
+	
 	@Test
 	void testArraySetCollectionOfE()
 	{
@@ -25,11 +28,17 @@ class ArraySetTest
 	{
 	}
 
+	/**
+	 * AddAllAllCollectionOfQextendsE Tests
+	 */
 	@Test
 	void testAddAllCollectionOfQextendsE()
 	{
 	}
 
+	/**
+	 * RetainAll Tests
+	 */
 	@Test
 	void testRetainAll()
 	{
@@ -39,17 +48,54 @@ class ArraySetTest
 	 * RemoveAll Tests
 	 */
 	@Test
-	void testRemoveAll()
+	void testAdd1RemoveAll()
 	{
 		//add 1 item to the list
 		list.add("Test");
 		list.removeAll(list);
 		assertTrue(list.isEmpty());
 		
+	}
+	
+	@Test
+	void testAddMultipleRemoveAll()
+	{
+		//remove multiple items
+		list.add("Test1");
+		list.add("Test2");
+		list.add("Test3");
+		list.add("Test4");
+
+		list.removeAll(list);
 		assertTrue(list.isEmpty());
 	}
 	
+	@Test
+	void testEmptyRemoveAll()
+	{
+		//clear empty list
+		list.removeAll(list);
+		assertTrue(list.isEmpty());
+		
+	}
 	
+	@Test
+	void testEmptyStringRemoveAll()
+	{
+		list.add("");
+		list.add("");
+		list.add("");
+		
+		list.removeAll(list);
+		assertTrue(list.isEmpty());
+		
+	}
+	
+	
+	
+	/**
+	 * AddAllIntCollectionOfQextendsE Tests
+	 */
 
 	@Test
 	void testAddAllIntCollectionOfQextendsE()
