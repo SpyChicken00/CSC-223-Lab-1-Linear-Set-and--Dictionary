@@ -33,6 +33,7 @@ class ArraySetTest
 		assertFalse(list.isEmpty());
 	}
 	
+	@Test
 	void testAddMany()
 	{
 		for(int i = 0;i < 5; i++ )
