@@ -1,5 +1,13 @@
+/**
+ * An ArraySet that implements the functionality of a list and a set
+ * 
+ * <p>Bugs: 
+ * 
+ * @author Jace Rettig and James ???
+ * @Date 8-24-22
+ * 
+ */
 package utilities;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
