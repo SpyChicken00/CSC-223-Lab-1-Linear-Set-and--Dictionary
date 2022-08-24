@@ -22,10 +22,25 @@ class ArraySetTest
 	void testArraySetCollectionOfE()
 	{
 	}
-
+/*
+ * add stuff
+ * 
+ */
 	@Test
-	void testAddE()
+	void testAdd()
 	{
+		list.add("E");
+		assertFalse(list.isEmpty());
+	}
+	
+	void testAddMany()
+	{
+		for(int i = 0;i < 5; i++ )
+		{
+			list.add("sum " + 1);
+		}
+		
+		assertEquals(list.size(), 5);
 	}
 
 	/**
