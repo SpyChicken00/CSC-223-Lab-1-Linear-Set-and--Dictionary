@@ -140,8 +140,8 @@ class ParallelArrayDictionaryTest
 		this.fillDictionaries();
 		intStringDictionary.clear();
 		intDoubleDictionary.clear();
-		assertTrue(intStringDictionary.isEmpty());
-		assertTrue(intDoubleDictionary.isEmpty());
+		assertTrue("String Dictionary is not empty", intStringDictionary.isEmpty());
+		assertTrue("Double Dictionary is not empty", intDoubleDictionary.isEmpty());
 	}
 	
 	@Test
