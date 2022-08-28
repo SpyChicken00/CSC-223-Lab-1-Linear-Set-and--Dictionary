@@ -1,8 +1,16 @@
+/**
+ * Test Cases for ArraySet Class
+ * 
+ * <p>Bugs: 
+ * 
+ * @author Jace Rettig and James ???
+ * @Date 8-28-22
+ */
 package utilities;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,6 +34,7 @@ class ArraySetTest
 	@Test
 	void testArraySetCollectionOfE()
 	{
+		//TODO?
 	}
 /*
  * add stuff
@@ -55,6 +64,7 @@ class ArraySetTest
 	@Test
 	void testAddAllCollectionOfQextendsE()
 	{
+		//TODO
 	}
 
 	/**
