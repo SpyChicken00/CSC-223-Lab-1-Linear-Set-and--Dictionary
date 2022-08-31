@@ -56,7 +56,7 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value> {
 		return value;
 	}
 
-	//this guy seems sus
+	//
 	@Override
 	public Value remove(Object key) {
 		//must remove from values first so save to variable

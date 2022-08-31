@@ -70,14 +70,21 @@ class ArraySetTest
 	/**
 	 * RetainAll Tests
 	 */
+	
+	/**
+	 * check if list will be empty despite retaining empty list
+	 */
 	@Test
 	void testEmptyRetainAll()
 	{
 		List<Integer> testList = Arrays.asList();
 		this.numlist.addAll(testList);
+		this.numlist.retainAll(testList);
 		assertTrue(this.numlist.isEmpty());
 	}
-	
+	/**
+	 * check if list will retain list
+	 */
 	@Test
 	void testRetainList() {
 		List<Integer> testList1 = Arrays.asList(1, 2, 3);
@@ -90,7 +97,9 @@ class ArraySetTest
 		assertTrue(this.numlist.containsAll(testList1));
 		assertFalse(this.numlist.containsAll(testList2));
 	}
-	
+	/**
+	 * check if list will retain list with null value
+	 */
 	@Test
 	void testRetainList2() {
 		List<Integer> testList1 = Arrays.asList(1, 2, 3);
@@ -110,7 +119,9 @@ class ArraySetTest
 		assertFalse(this.numlist.containsAll(testList1));
 		assertFalse(this.numlist.contains(null));
 	}
-	
+	/**
+	 * check if retain will save empty list
+	 */
 	@Test
 	void testRetainEmptyList() {
 		List<Integer> testList1 = Arrays.asList();
@@ -178,6 +189,9 @@ class ArraySetTest
 		assertTrue(list.isEmpty());
 	}
 	
+	/**
+	 * add values to beginning of list index
+	 */
 	@Test
 	void testAddValuestoBeginningAddAllIndex()
 	{
@@ -188,16 +202,23 @@ class ArraySetTest
 		assertTrue(list.contains("a"));
 	}
 	
+	/**
+	 * add values to the end of list index
+	 */
 	@Test
 	void testAddValuestoEndAddAllIndex()
 	{
 		List<String> testList = Arrays.asList();
 		testList = Arrays.asList("a", "b", "c");
-		this.list.addAll(0, testList);
+		list.add("z");
+		list.add("x");
+		this.list.addAll(2, testList);
 		assertFalse(list.isEmpty());
-		assertEquals(list.get(2), "c");
+		assertEquals(list.get(4), "c");
 	}
-	
+	/**
+	 * add null list to index 0
+	 */
 	@Test
 	void testAddNullList() {
 		List<String> testList = Arrays.asList(null, null, null);
