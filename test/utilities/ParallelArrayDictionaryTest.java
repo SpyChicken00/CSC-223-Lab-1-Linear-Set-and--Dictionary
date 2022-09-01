@@ -22,9 +22,6 @@ class ParallelArrayDictionaryTest
 		this.intDoubleDictionary = new ParallelArrayDictionary<Integer, Double>();
 	}
 	
-	/**
-	 * helper method to fill test dictionaries with values
-	 */
 	private void fillDictionaries() {
 		this.intDoubleDictionary.put(1, 1.0);
 		this.intDoubleDictionary.put(2, 2.0);
@@ -84,7 +81,6 @@ class ParallelArrayDictionaryTest
 	/**
 	 * Remove method tests
 	 */
-	//remove string from dictionary
 	@Test
 	void testRemoveString()
 	{
@@ -101,7 +97,7 @@ class ParallelArrayDictionaryTest
 		
 		
 	}
-	//remove double from dictionary 
+	
 	@Test
 	void testRemoveDouble() {
 		this.fillDictionaries();
@@ -116,7 +112,6 @@ class ParallelArrayDictionaryTest
 		assertTrue(intDoubleDictionary.containsValue(3.0));
 	}
 	
-	//remove null value from dictionary
 	@Test
 	void testRemoveNull() {
 		this.intStringDictionary.put(1, "one");
@@ -126,7 +121,6 @@ class ParallelArrayDictionaryTest
 		assertEquals("one", intStringDictionary.get(1));
 	}
 	
-	//remove from dictionary then still be able to add new values
 	@Test
 	void testRemovethenAdd() {
 		this.fillDictionaries();
@@ -140,8 +134,6 @@ class ParallelArrayDictionaryTest
 	/**
 	 * Clear method tests
 	 */
-	
-	//check that full dictionary is empty after being cleared
 	@Test
 	void testClearFullDictionary()
 	{
@@ -152,7 +144,6 @@ class ParallelArrayDictionaryTest
 		assertTrue("Double Dictionary is not empty", intDoubleDictionary.isEmpty());
 	}
 	
-	//clear an empty dictionary
 	@Test
 	void testClearEmptyDictionary() {
 		intStringDictionary.clear();
@@ -161,7 +152,6 @@ class ParallelArrayDictionaryTest
 		assertTrue(intDoubleDictionary.isEmpty());
 	}
 	
-	//clear null dictionary
 	@Test
 	void testClearNullDictionary() {
 		intStringDictionary.put(null, null);
@@ -184,12 +174,24 @@ class ParallelArrayDictionaryTest
 	@Test
 	void testPut()
 	{
-		//TODO
+		this.intDoubleDictionary.put(1, 115.0);
+		assertEquals((Double)115.0, intDoubleDictionary.get(1));
 	}
 	
 	@Test
 	void testPutAll()
 	{
-		//TODO
+		ParallelArrayDictionary<Integer, String> mp = new ParallelArrayDictionary<Integer, String>();
+		mp.put(1, "a");
+		mp.put(2, "b");
+		mp.put(3, "c");
+		intStringDictionary.clear();
+		intStringDictionary.putAll(mp);
+		assertTrue(intStringDictionary.containsKey(1));
+		assertTrue(intStringDictionary.containsKey(2));
+		assertTrue(intStringDictionary.containsKey(3));
+		assertTrue(intStringDictionary.containsValue("a"));
+		assertTrue(intStringDictionary.containsValue("b"));
+		assertTrue(intStringDictionary.containsValue("c"));
 	}
 }

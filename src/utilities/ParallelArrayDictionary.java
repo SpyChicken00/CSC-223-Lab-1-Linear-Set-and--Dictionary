@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
+import java.util.AbstractMap;
 
 public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value> {
 	protected ArraySet<Key> keys;
@@ -71,7 +72,15 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value> {
 
 	@Override
 	public void putAll(Map<? extends Key, ? extends Value> m) {
-		// TODO Auto-generated method stub	
+		for (Key K : m.keySet())
+		{
+			if (this.keys.contains(K))
+			{
+				this.remove(K);
+			}
+			this.keys.add(K);
+			this.values.add(m.get(K));
+		}
 	}
 
 	@Override
@@ -85,19 +94,24 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value> {
 
 	@Override
 	public Set<Key> keySet() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return keys;
 	}
 
 	@Override
 	public Collection<Value> values() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return values;
 	}
 
 	@Override
 	public Set<Entry<Key, Value>> entrySet() {
-		// TODO Auto-generated method stub
+		ArraySet <Entry<Key, Value>> S;
+		S = new ArraySet();
+		for (Key K : this.keys)
+		{
+			S.add(SimpleEntry(Map.Entry<K, V>(K, K)));
+		}
 		return null;
 	}
 
