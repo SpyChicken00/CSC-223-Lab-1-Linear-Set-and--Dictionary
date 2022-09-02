@@ -11,6 +11,9 @@ package utilities;
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
 
+import java.util.Map;
+import java.util.Set;
+
 class ParallelArrayDictionaryTest
 {
 	private ParallelArrayDictionary<Integer, String> intStringDictionary;
@@ -193,5 +196,27 @@ class ParallelArrayDictionaryTest
 		assertTrue(intStringDictionary.containsValue("a"));
 		assertTrue(intStringDictionary.containsValue("b"));
 		assertTrue(intStringDictionary.containsValue("c"));
+	}
+	
+	@Test
+	void testkeySetValues() //testing the keyset and values sets
+	{
+		this.fillDictionaries();
+		assertTrue(intStringDictionary.keySet().contains(1));
+		assertTrue(intStringDictionary.keySet().contains(2));
+		assertTrue(intStringDictionary.keySet().contains(3));
+		assertTrue(intStringDictionary.values().contains("one"));
+		assertTrue(intStringDictionary.values().contains("two"));
+		assertTrue(intStringDictionary.values().contains("three"));
+	}
+	
+	
+	@Test
+	void testentrySet()
+	{
+		this.fillDictionaries();
+		assertTrue(intStringDictionary.entrySet().contains(Map.entry(1, "one")));
+		assertTrue(intStringDictionary.entrySet().contains(Map.entry(2, "two")));
+		assertTrue(intStringDictionary.entrySet().contains(Map.entry(3, "three")));
 	}
 }

@@ -107,12 +107,12 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value> {
 	@Override
 	public Set<Entry<Key, Value>> entrySet() {
 		ArraySet <Entry<Key, Value>> S;
-		S = new ArraySet();
+		S = new ArraySet<>();
 		for (Key K : this.keys)
 		{
-			S.add(SimpleEntry(Map.Entry<K, V>(K, K)));
+			S.add(new AbstractMap.SimpleEntry<>(K, this.values.get(keys.indexOf(K))));
 		}
-		return null;
+		return S;
 	}
 
 }
