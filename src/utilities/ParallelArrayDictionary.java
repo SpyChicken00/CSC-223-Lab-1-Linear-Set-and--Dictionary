@@ -104,6 +104,7 @@ public class ParallelArrayDictionary<Key, Value> implements Map<Key, Value> {
 		return values;
 	}
 
+	//O(n^2) , inefficient 
 	@Override
 	public Set<Entry<Key, Value>> entrySet() {
 		ArraySet <Entry<Key, Value>> S;

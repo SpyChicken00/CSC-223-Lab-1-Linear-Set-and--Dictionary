@@ -58,6 +58,7 @@ public class ArraySet<E> implements List<E>, Set<E> {
 	@Override
 	public boolean add(E e) {
 		return list.add(e);
+		//check for containment, adding multiple times
 	}
 
 	@Override
